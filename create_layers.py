@@ -11,7 +11,7 @@ def dbyzero_deimos_layers_creation():
 
     layer_list = get_layer_list()
     pdb.gimp_progress_update(0)
-    rawImage = pdb.gimp_image_new( 800, 1600, RGB )
+    rawImage = pdb.gimp_image_new( 800, 1200, RGB )
     pdb.gimp_display_new(rawImage)
     image = gimp.image_list()[0]
     image_sprites = gimp.image_list()[1]
@@ -26,14 +26,10 @@ def dbyzero_deimos_layers_creation():
         (5, "runLeft"),
         (6, "attackRunRight"),
         (7, "attackRunLeft"),
-        (8, "flyDownRight"),
-        (9, "flyDownLeft"),
-        (10, "attackFlyDownRight"),
-		(11, "attackFlyDownLeft"),
-        (12, "flyUpRight"),
-        (13, "flUpnLeft"),
-        (14, "attackFlyUpRight"),
-        (15, "attackFlUpnLeft")
+        (8, "flyRight"),
+        (9, "flyLeft"),
+        (10, "attackFlyRight"),
+		(11, "attackFlyLeft"),
     ]
 
     # display = pdb.gimp_display_new(image)
@@ -70,19 +66,19 @@ def add_a_layer(row_layer, row, step):
 
     if row[0] % 2 == 0:
         sprites = [
-            (0, "leftHand"),
-            (1, "feed"),
-            (2, "body"),
-            (3, "head"),
+            # (0, "leftHand"),
+            # (1, "feet"),
+            # (2, "body"),
+            # (3, "head"),
             (4, "rightHand")
         ]
     else:
         sprites = [
             (0, "rightHand"),
-            (1, "feed"),
-            (2, "body"),
-            (3, "head"),
-            (4, "leftHand")
+            # (1, "feet"),
+            # (2, "body"),
+            # (3, "head"),
+            # (4, "leftHand")
         ]
 
     for sprite in sprites:
@@ -464,87 +460,87 @@ def get_layer_list():
     layer_list[7][7][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #attackRunLeft step8 head
     layer_list[7][7][4] = (3, 3, {'orientation':1, 'delta':{'x':0, 'y':0}}) #attackRunLeft step8 leftHand
 
-    layer_list[8][0][0] = (3, 2, {'orientation':1, 'delta':{'x':5, 'y':6}}) #flyRight step1 leftHand
+    layer_list[8][0][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #flyRight step1 leftHand
     layer_list[8][0][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #flyRight step1 feet
     layer_list[8][0][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #flyRight step1 body
     layer_list[8][0][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':5}}) #flyRight step1 head
-    layer_list[8][0][4] = (3, 2, {'orientation':0, 'delta':{'x':3, 'y':3}}) #flyRight step1 rightHand
-    layer_list[8][1][0] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':6}}) #flyRight step2 leftHand
+    layer_list[8][0][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':1}}) #flyRight step1 rightHand
+    layer_list[8][1][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #flyRight step2 leftHand
     layer_list[8][1][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #flyRight step2 feet
     layer_list[8][1][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #flyRight step2 body
     layer_list[8][1][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':5}}) #flyRight step2 head
-    layer_list[8][1][4] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':3}}) #flyRight step2 rightHand
-    layer_list[8][2][0] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':5}}) #flyRight step3 leftHand
+    layer_list[8][1][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':1}}) #flyRight step2 rightHand
+    layer_list[8][2][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #flyRight step3 leftHand
     layer_list[8][2][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #flyRight step3 feet
     layer_list[8][2][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':2}}) #flyRight step3 body
     layer_list[8][2][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':4}}) #flyRight step3 head
-    layer_list[8][2][4] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':2}}) #flyRight step3 rightHand
-    layer_list[8][3][0] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':4}}) #flyRight step4 leftHand
+    layer_list[8][2][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':0}}) #flyRight step3 rightHand
+    layer_list[8][3][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyRight step4 leftHand
     layer_list[8][3][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #flyRight step4 feet
-    layer_list[8][3][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':2}}) #flyRight step4 body
+    layer_list[8][3][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #flyRight step4 body
     layer_list[8][3][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #flyRight step4 head
-    layer_list[8][3][4] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':1}}) #flyRight step4 rightHand
-    layer_list[8][4][0] = (3, 2, {'orientation':1, 'delta':{'x':5, 'y':4}}) #flyRight step5 leftHand
+    layer_list[8][3][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':-1}}) #flyRight step4 rightHand
+    layer_list[8][4][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyRight step5 leftHand
     layer_list[8][4][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #flyRight step5 feet
     layer_list[8][4][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #flyRight step5 body
     layer_list[8][4][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #flyRight step5 head
-    layer_list[8][4][4] = (3, 2, {'orientation':0, 'delta':{'x':3, 'y':1}}) #flyRight step5 rightHand
-    layer_list[8][5][0] = (3, 2, {'orientation':1, 'delta':{'x':6, 'y':4}}) #flyRight step6 leftHand
+    layer_list[8][4][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':-1}}) #flyRight step5 rightHand
+    layer_list[8][5][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyRight step6 leftHand
     layer_list[8][5][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #flyRight step6 feet
     layer_list[8][5][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #flyRight step6 body
     layer_list[8][5][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #flyRight step6 head
-    layer_list[8][5][4] = (3, 2, {'orientation':0, 'delta':{'x':2, 'y':1}}) #flyRight step6 rightHand
-    layer_list[8][6][0] = (3, 2, {'orientation':1, 'delta':{'x':6, 'y':5}}) #flyRight step7 leftHand
+    layer_list[8][5][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':-1}}) #flyRight step6 rightHand
+    layer_list[8][6][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #flyRight step7 leftHand
     layer_list[8][6][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #flyRight step7 feet
     layer_list[8][6][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':2}}) #flyRight step7 body
     layer_list[8][6][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':4}}) #flyRight step7 head
-    layer_list[8][6][4] = (3, 2, {'orientation':0, 'delta':{'x':2, 'y':2}}) #flyRight step7 rightHand
-    layer_list[8][7][0] = (3, 2, {'orientation':1, 'delta':{'x':6, 'y':6}}) #flyRight step8 leftHand
+    layer_list[8][6][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':0}}) #flyRight step7 rightHand
+    layer_list[8][7][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #flyRight step8 leftHand
     layer_list[8][7][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #flyRight step8 feet
     layer_list[8][7][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #flyRight step8 body
     layer_list[8][7][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':5}}) #flyRight step8 head
-    layer_list[8][7][4] = (3, 2, {'orientation':0, 'delta':{'x':2, 'y':3}}) #flyRight step8 rightHand
+    layer_list[8][7][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':1}}) #flyRight step8 rightHand
 
-    layer_list[9][0][0] = (3, 2, {'orientation':0, 'delta':{'x':5, 'y':6}}) #flyLeft step1 rightHand
+    layer_list[9][0][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #flyLeft step1 rightHand
     layer_list[9][0][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #flyLeft step1 feet
     layer_list[9][0][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyLeft step1 body
     layer_list[9][0][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #flyLeft step1 head
-    layer_list[9][0][4] = (3, 2, {'orientation':1, 'delta':{'x':3, 'y':3}}) #flyLeft step1 leftHand
-    layer_list[9][1][0] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':6}}) #flyLeft step2 rightHand
+    layer_list[9][0][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':1}}) #flyLeft step1 leftHand
+    layer_list[9][1][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #flyLeft step2 rightHand
     layer_list[9][1][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #flyLeft step2 feet
     layer_list[9][1][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyLeft step2 body
     layer_list[9][1][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #flyLeft step2 head
-    layer_list[9][1][4] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':3}}) #flyLeft step2 leftHand
-    layer_list[9][2][0] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':5}}) #flyLeft step3 rightHand
+    layer_list[9][1][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':1}}) #flyLeft step2 leftHand
+    layer_list[9][2][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #flyLeft step3 rightHand
     layer_list[9][2][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #flyLeft step3 feet
     layer_list[9][2][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':2}}) #flyLeft step3 body
     layer_list[9][2][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #flyLeft step3 head
-    layer_list[9][2][4] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':2}}) #flyLeft step3 leftHand
-    layer_list[9][3][0] = (3, 2, {'orientation':0, 'delta':{'x':4, 'y':4}}) #flyLeft step4 rightHand
+    layer_list[9][2][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':0}}) #flyLeft step3 leftHand
+    layer_list[9][3][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyLeft step4 rightHand
     layer_list[9][3][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #flyLeft step4 feet
-    layer_list[9][3][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':2}}) #flyLeft step4 body
+    layer_list[9][3][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #flyLeft step4 body
     layer_list[9][3][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyLeft step4 head
-    layer_list[9][3][4] = (3, 2, {'orientation':1, 'delta':{'x':4, 'y':1}}) #flyLeft step4 leftHand
-    layer_list[9][4][0] = (3, 2, {'orientation':0, 'delta':{'x':5, 'y':4}}) #flyLeft step5 rightHand
+    layer_list[9][3][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':-1}}) #flyLeft step4 leftHand
+    layer_list[9][4][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyLeft step5 rightHand
     layer_list[9][4][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #flyLeft step5 feet
     layer_list[9][4][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #flyLeft step5 body
     layer_list[9][4][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyLeft step5 head
-    layer_list[9][4][4] = (3, 2, {'orientation':1, 'delta':{'x':3, 'y':1}}) #flyLeft step5 leftHand
-    layer_list[9][5][0] = (3, 2, {'orientation':0, 'delta':{'x':6, 'y':4}}) #flyLeft step6 rightHand
+    layer_list[9][4][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':-1}}) #flyLeft step5 leftHand
+    layer_list[9][5][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyLeft step6 rightHand
     layer_list[9][5][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #flyLeft step6 feet
     layer_list[9][5][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #flyLeft step6 body
     layer_list[9][5][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyLeft step6 head
-    layer_list[9][5][4] = (3, 2, {'orientation':1, 'delta':{'x':2, 'y':1}}) #flyLeft step6 leftHand
-    layer_list[9][6][0] = (3, 2, {'orientation':0, 'delta':{'x':6, 'y':5}}) #flyLeft step7 rightHand
+    layer_list[9][5][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':-1}}) #flyLeft step6 leftHand
+    layer_list[9][6][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #flyLeft step7 rightHand
     layer_list[9][6][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #flyLeft step7 feet
     layer_list[9][6][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':2}}) #flyLeft step7 body
     layer_list[9][6][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #flyLeft step7 head
-    layer_list[9][6][4] = (3, 2, {'orientation':1, 'delta':{'x':2, 'y':2}}) #flyLeft step7 leftHand
-    layer_list[9][7][0] = (3, 2, {'orientation':0, 'delta':{'x':6, 'y':6}}) #flyLeft step8 rightHand
+    layer_list[9][6][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':0}}) #flyLeft step7 leftHand
+    layer_list[9][7][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #flyLeft step8 rightHand
     layer_list[9][7][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #flyLeft step8 feet
     layer_list[9][7][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyLeft step8 body
     layer_list[9][7][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #flyLeft step8 head
-    layer_list[9][7][4] = (3, 2, {'orientation':1, 'delta':{'x':2, 'y':3}}) #flyLeft step8 leftHand
+    layer_list[9][7][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':1}}) #flyLeft step8 leftHand
 
     layer_list[10][0][0] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyRight step1 leftHand
     layer_list[10][0][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyRight step1 feet
@@ -587,210 +583,46 @@ def get_layer_list():
     layer_list[10][7][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':5}}) #attackFlyRight step8 head
     layer_list[10][7][4] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyRight step8 rightHand
 
-    layer_list[11][0][0] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyLeft step1 rightHand
+    layer_list[11][0][0] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyLeft step1 rightHand
     layer_list[11][0][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyLeft step1 feet
     layer_list[11][0][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #attackFlyLeft step1 body
     layer_list[11][0][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #attackFlyLeft step1 head
     layer_list[11][0][4] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyLeft step1 leftHand
-    layer_list[11][1][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyLeft step2 rightHand
+    layer_list[11][1][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyLeft step2 rightHand
     layer_list[11][1][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyLeft step2 feet
     layer_list[11][1][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #attackFlyLeft step2 body
     layer_list[11][1][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #attackFlyLeft step2 head
     layer_list[11][1][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyLeft step2 leftHand
-    layer_list[11][2][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyLeft step3 rightHand
+    layer_list[11][2][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #attackFlyLeft step3 rightHand
     layer_list[11][2][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyLeft step3 feet
     layer_list[11][2][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':2}}) #attackFlyLeft step3 body
     layer_list[11][2][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #attackFlyLeft step3 head
     layer_list[11][2][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyLeft step3 leftHand
-    layer_list[11][3][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyLeft step4 rightHand
+    layer_list[11][3][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #attackFlyLeft step4 rightHand
     layer_list[11][3][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyLeft step4 feet
     layer_list[11][3][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyLeft step4 body
     layer_list[11][3][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #attackFlyLeft step4 head
     layer_list[11][3][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyLeft step4 leftHand
-    layer_list[11][4][0] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyLeft step5 rightHand
+    layer_list[11][4][0] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #attackFlyLeft step5 rightHand
     layer_list[11][4][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyLeft step5 feet
     layer_list[11][4][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyLeft step5 body
     layer_list[11][4][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #attackFlyLeft step5 head
     layer_list[11][4][4] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyLeft step5 leftHand
-    layer_list[11][5][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyLeft step6 rightHand
+    layer_list[11][5][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #attackFlyLeft step6 rightHand
     layer_list[11][5][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyLeft step6 feet
     layer_list[11][5][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyLeft step6 body
     layer_list[11][5][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #attackFlyLeft step6 head
     layer_list[11][5][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyLeft step6 leftHand
-    layer_list[11][6][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyLeft step7 rightHand
+    layer_list[11][6][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #attackFlyLeft step7 rightHand
     layer_list[11][6][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyLeft step7 feet
     layer_list[11][6][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':2}}) #attackFlyLeft step7 body
     layer_list[11][6][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #attackFlyLeft step7 head
     layer_list[11][6][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyLeft step7 leftHand
-    layer_list[11][7][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyLeft step8 rightHand
+    layer_list[11][7][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #attackFlyLeft step8 rightHand
     layer_list[11][7][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyLeft step8 feet
     layer_list[11][7][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #attackFlyLeft step8 body
     layer_list[11][7][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #attackFlyLeft step8 head
     layer_list[11][7][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyLeft step8 leftHand
-
-    layer_list[12][0][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #flyUpRight step1 leftHand
-    layer_list[12][0][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #flyUpRight step1 feet
-    layer_list[12][0][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #flyUpRight step1 body
-    layer_list[12][0][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':5}}) #flyUpRight step1 head
-    layer_list[12][0][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':1}}) #flyUpRight step1 rightHand
-    layer_list[12][1][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #flyUpRight step2 leftHand
-    layer_list[12][1][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #flyUpRight step2 feet
-    layer_list[12][1][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #flyUpRight step2 body
-    layer_list[12][1][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':5}}) #flyUpRight step2 head
-    layer_list[12][1][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':1}}) #flyUpRight step2 rightHand
-    layer_list[12][2][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #flyUpRight step3 leftHand
-    layer_list[12][2][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #flyUpRight step3 feet
-    layer_list[12][2][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':2}}) #flyUpRight step3 body
-    layer_list[12][2][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':4}}) #flyUpRight step3 head
-    layer_list[12][2][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':0}}) #flyUpRight step3 rightHand
-    layer_list[12][3][0] = (4, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyUpRight step4 leftHand
-    layer_list[12][3][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #flyUpRight step4 feet
-    layer_list[12][3][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #flyUpRight step4 body
-    layer_list[12][3][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #flyUpRight step4 head
-    layer_list[12][3][4] = (4, 2, {'orientation':0, 'delta':{'x':6, 'y':-1}}) #flyUpRight step4 rightHand
-    layer_list[12][4][0] = (4, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyUpRight step5 leftHand
-    layer_list[12][4][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #flyUpRight step5 feet
-    layer_list[12][4][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #flyUpRight step5 body
-    layer_list[12][4][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #flyUpRight step5 head
-    layer_list[12][4][4] = (4, 2, {'orientation':0, 'delta':{'x':5, 'y':-1}}) #flyUpRight step5 rightHand
-    layer_list[12][5][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyUpRight step6 leftHand
-    layer_list[12][5][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #flyUpRight step6 feet
-    layer_list[12][5][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #flyUpRight step6 body
-    layer_list[12][5][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #flyUpRight step6 head
-    layer_list[12][5][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':-1}}) #flyUpRight step6 rightHand
-    layer_list[12][6][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #flyUpRight step7 leftHand
-    layer_list[12][6][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #flyUpRight step7 feet
-    layer_list[12][6][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':2}}) #flyUpRight step7 body
-    layer_list[12][6][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':4}}) #flyUpRight step7 head
-    layer_list[12][6][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':0}}) #flyUpRight step7 rightHand
-    layer_list[12][7][0] = (4, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #flyUpRight step8 leftHand
-    layer_list[12][7][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #flyUpRight step8 feet
-    layer_list[12][7][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #flyUpRight step8 body
-    layer_list[12][7][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':5}}) #flyUpRight step8 head
-    layer_list[12][7][4] = (4, 2, {'orientation':0, 'delta':{'x':4, 'y':1}}) #flyUpRight step8 rightHand
-
-    layer_list[13][0][0] = (4, 2, {'orientation':0, 'delta':{'x':0, 'y':5}}) #flyUpLeft step1 rightHand
-    layer_list[13][0][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #flyUpLeft step1 feet
-    layer_list[13][0][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyUpLeft step1 body
-    layer_list[13][0][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #flyUpLeft step1 head
-    layer_list[13][0][4] = (4, 2, {'orientation':1, 'delta':{'x':5, 'y':1}}) #flyUpLeft step1 leftHand
-    layer_list[13][1][0] = (4, 2, {'orientation':0, 'delta':{'x':-1, 'y':5}}) #flyUpLeft step2 rightHand
-    layer_list[13][1][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #flyUpLeft step2 feet
-    layer_list[13][1][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyUpLeft step2 body
-    layer_list[13][1][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #flyUpLeft step2 head
-    layer_list[13][1][4] = (4, 2, {'orientation':1, 'delta':{'x':6, 'y':1}}) #flyUpLeft step2 leftHand
-    layer_list[13][2][0] = (4, 2, {'orientation':0, 'delta':{'x':-1, 'y':4}}) #flyUpLeft step3 rightHand
-    layer_list[13][2][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #flyUpLeft step3 feet
-    layer_list[13][2][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':2}}) #flyUpLeft step3 body
-    layer_list[13][2][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #flyUpLeft step3 head
-    layer_list[13][2][4] = (4, 2, {'orientation':1, 'delta':{'x':6, 'y':0}}) #flyUpLeft step3 leftHand
-    layer_list[13][3][0] = (4, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #flyUpLeft step4 rightHand
-    layer_list[13][3][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #flyUpLeft step4 feet
-    layer_list[13][3][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #flyUpLeft step4 body
-    layer_list[13][3][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #flyUpLeft step4 head
-    layer_list[13][3][4] = (4, 2, {'orientation':1, 'delta':{'x':6, 'y':-1}}) #flyUpLeft step4 leftHand
-    layer_list[13][4][0] = (4, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #flyUpLeft step5 rightHand
-    layer_list[13][4][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #flyUpLeft step5 feet
-    layer_list[13][4][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #flyUpLeft step5 body
-    layer_list[13][4][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #flyUpLeft step5 head
-    layer_list[13][4][4] = (4, 2, {'orientation':1, 'delta':{'x':5, 'y':-1}}) #flyUpLeft step5 leftHand
-    layer_list[13][5][0] = (4, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #flyUpLeft step6 rightHand
-    layer_list[13][5][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #flyUpLeft step6 feet
-    layer_list[13][5][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #flyUpLeft step6 body
-    layer_list[13][5][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyUpLeft step6 head
-    layer_list[13][5][4] = (4, 2, {'orientation':1, 'delta':{'x':4, 'y':-1}}) #flyUpLeft step6 leftHand
-    layer_list[13][6][0] = (4, 2, {'orientation':0, 'delta':{'x':1, 'y':4}}) #flyUpLeft step7 rightHand
-    layer_list[13][6][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #flyUpLeft step7 feet
-    layer_list[13][6][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':2}}) #flyUpLeft step7 body
-    layer_list[13][6][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #flyUpLeft step7 head
-    layer_list[13][6][4] = (4, 2, {'orientation':1, 'delta':{'x':4, 'y':0}}) #flyUpLeft step7 leftHand
-    layer_list[13][7][0] = (4, 2, {'orientation':0, 'delta':{'x':1, 'y':5}}) #flyUpLeft step8 rightHand
-    layer_list[13][7][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #flyUpLeft step8 feet
-    layer_list[13][7][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #flyUpLeft step8 body
-    layer_list[13][7][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #flyUpLeft step8 head
-    layer_list[13][7][4] = (4, 2, {'orientation':1, 'delta':{'x':4, 'y':1}}) #flyUpLeft step8 leftHand
-
-    layer_list[14][0][0] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyUpRight step1 leftHand
-    layer_list[14][0][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyUpRight step1 feet
-    layer_list[14][0][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #attackFlyUpRight step1 body
-    layer_list[14][0][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':5}}) #attackFlyUpRight step1 head
-    layer_list[14][0][4] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyUpRight step1 rightHand
-    layer_list[14][1][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyUpRight step2 leftHand
-    layer_list[14][1][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #attackFlyUpRight step2 feet
-    layer_list[14][1][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #attackFlyUpRight step2 body
-    layer_list[14][1][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':5}}) #attackFlyUpRight step2 head
-    layer_list[14][1][4] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #attackFlyUpRight step2 rightHand
-    layer_list[14][2][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyUpRight step3 leftHand
-    layer_list[14][2][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #attackFlyUpRight step3 feet
-    layer_list[14][2][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':2}}) #attackFlyUpRight step3 body
-    layer_list[14][2][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':4}}) #attackFlyUpRight step3 head
-    layer_list[14][2][4] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #attackFlyUpRight step3 rightHand
-    layer_list[14][3][0] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpRight step4 leftHand
-    layer_list[14][3][1] = (2, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #attackFlyUpRight step4 feet
-    layer_list[14][3][2] = (1, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #attackFlyUpRight step4 body
-    layer_list[14][3][3] = (0, 2, {'orientation':0, 'delta':{'x':1, 'y':3}}) #attackFlyUpRight step4 head
-    layer_list[14][3][4] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #attackFlyUpRight step4 rightHand
-    layer_list[14][4][0] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyUpRight step5 leftHand
-    layer_list[14][4][1] = (2, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #attackFlyUpRight step5 feet
-    layer_list[14][4][2] = (1, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyUpRight step5 body
-    layer_list[14][4][3] = (0, 2, {'orientation':0, 'delta':{'x':0, 'y':3}}) #attackFlyUpRight step5 head
-    layer_list[14][4][4] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #attackFlyUpRight step5 rightHand
-    layer_list[14][5][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyUpRight step6 leftHand
-    layer_list[14][5][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpRight step6 feet
-    layer_list[14][5][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyUpRight step6 body
-    layer_list[14][5][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #attackFlyUpRight step6 head
-    layer_list[14][5][4] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpRight step6 rightHand
-    layer_list[14][6][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyUpRight step7 leftHand
-    layer_list[14][6][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #attackFlyUpRight step7 feet
-    layer_list[14][6][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':2}}) #attackFlyUpRight step7 body
-    layer_list[14][6][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':4}}) #attackFlyUpRight step7 head
-    layer_list[14][6][4] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #attackFlyUpRight step7 rightHand
-    layer_list[14][7][0] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyUpRight step8 leftHand
-    layer_list[14][7][1] = (2, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyUpRight step8 feet
-    layer_list[14][7][2] = (1, 2, {'orientation':0, 'delta':{'x':-1, 'y':3}}) #attackFlyUpRight step8 body
-    layer_list[14][7][3] = (0, 2, {'orientation':0, 'delta':{'x':-1, 'y':5}}) #attackFlyUpRight step8 head
-    layer_list[14][7][4] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyUpRight step8 rightHand
-
-    layer_list[15][0][0] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':1}}) #attackFlyUpLeft step1 rightHand
-    layer_list[15][0][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyUpLeft step1 feet
-    layer_list[15][0][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #attackFlyUpLeft step1 body
-    layer_list[15][0][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':5}}) #attackFlyUpLeft step1 head
-    layer_list[15][0][4] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyUpLeft step1 leftHand
-    layer_list[15][1][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':1}}) #attackFlyUpLeft step2 rightHand
-    layer_list[15][1][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyUpLeft step2 feet
-    layer_list[15][1][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #attackFlyUpLeft step2 body
-    layer_list[15][1][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':5}}) #attackFlyUpLeft step2 head
-    layer_list[15][1][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyUpLeft step2 leftHand
-    layer_list[15][2][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':0}}) #attackFlyUpLeft step3 rightHand
-    layer_list[15][2][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyUpLeft step3 feet
-    layer_list[15][2][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':2}}) #attackFlyUpLeft step3 body
-    layer_list[15][2][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':4}}) #attackFlyUpLeft step3 head
-    layer_list[15][2][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':0}}) #attackFlyUpLeft step3 leftHand
-    layer_list[15][3][0] = (5, 2, {'orientation':0, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpLeft step4 rightHand
-    layer_list[15][3][1] = (2, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyUpLeft step4 feet
-    layer_list[15][3][2] = (1, 2, {'orientation':1, 'delta':{'x':1, 'y':1}}) #attackFlyUpLeft step4 body
-    layer_list[15][3][3] = (0, 2, {'orientation':1, 'delta':{'x':1, 'y':3}}) #attackFlyUpLeft step4 head
-    layer_list[15][3][4] = (5, 2, {'orientation':1, 'delta':{'x':1, 'y':-1}}) #attackFlyUpLeft step4 leftHand
-    layer_list[15][4][0] = (5, 2, {'orientation':0, 'delta':{'x':0, 'y':-1}}) #attackFlyUpLeft step5 rightHand
-    layer_list[15][4][1] = (2, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyUpLeft step5 feet
-    layer_list[15][4][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':1}}) #attackFlyUpLeft step5 body
-    layer_list[15][4][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':3}}) #attackFlyUpLeft step5 head
-    layer_list[15][4][4] = (5, 2, {'orientation':1, 'delta':{'x':0, 'y':-1}}) #attackFlyUpLeft step5 leftHand
-    layer_list[15][5][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':-1}}) #attackFlyUpLeft step6 rightHand
-    layer_list[15][5][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpLeft step6 feet
-    layer_list[15][5][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyUpLeft step6 body
-    layer_list[15][5][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #attackFlyUpLeft step6 head
-    layer_list[15][5][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':-1}}) #attackFlyUpLeft step6 leftHand
-    layer_list[15][6][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':0}}) #attackFlyUpLeft step7 rightHand
-    layer_list[15][6][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyUpLeft step7 feet
-    layer_list[15][6][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':2}}) #attackFlyUpLeft step7 body
-    layer_list[15][6][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':4}}) #attackFlyUpLeft step7 head
-    layer_list[15][6][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':0}}) #attackFlyUpLeft step7 leftHand
-    layer_list[15][7][0] = (5, 2, {'orientation':0, 'delta':{'x':1, 'y':1}}) #attackFlyUpLeft step8 rightHand
-    layer_list[15][7][1] = (2, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyUpLeft step8 feet
-    layer_list[15][7][2] = (1, 2, {'orientation':1, 'delta':{'x':-1, 'y':3}}) #attackFlyUpLeft step8 body
-    layer_list[15][7][3] = (0, 2, {'orientation':1, 'delta':{'x':-1, 'y':5}}) #attackFlyUpLeft step8 head
-    layer_list[15][7][4] = (5, 2, {'orientation':1, 'delta':{'x':-1, 'y':1}}) #attackFlyUpLeft step8 leftHand
 
     return layer_list
 
