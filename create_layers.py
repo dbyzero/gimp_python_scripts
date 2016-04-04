@@ -66,19 +66,19 @@ def add_a_layer(row_layer, row, step):
 
     if row[0] % 2 == 0:
         sprites = [
-            # (0, "leftHand"),
-            # (1, "feet"),
-            # (2, "body"),
-            # (3, "head"),
+            (0, "leftHand"),
+            (1, "feet"),
+            (2, "body"),
+            (3, "head"),
             (4, "rightHand")
         ]
     else:
         sprites = [
             (0, "rightHand"),
-            # (1, "feet"),
-            # (2, "body"),
-            # (3, "head"),
-            # (4, "leftHand")
+            (1, "feet"),
+            (2, "body"),
+            (3, "head"),
+            (4, "leftHand")
         ]
 
     for sprite in sprites:
@@ -341,42 +341,42 @@ def get_layer_list():
     layer_list[5][0][1] = (0, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step1 feet
     layer_list[5][0][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step1 body
     layer_list[5][0][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step1 head
-    layer_list[5][0][4] = (4, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step1 leftHand
-    layer_list[5][1][0] = (1, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step2 rightHand
+    layer_list[5][0][4] = (4, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step1 leftHand
+    layer_list[5][1][0] = (1, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step2 rightHand
     layer_list[5][1][1] = (1, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step2 feet
     layer_list[5][1][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step2 body
     layer_list[5][1][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step2 head
-    layer_list[5][1][4] = (5, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step2 leftHand
-    layer_list[5][2][0] = (2, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step3 rightHand
+    layer_list[5][1][4] = (5, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step2 leftHand
+    layer_list[5][2][0] = (2, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step3 rightHand
     layer_list[5][2][1] = (2, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step3 feet
     layer_list[5][2][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':8}}) #runLeft step3 body
     layer_list[5][2][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':8}}) #runLeft step3 head
-    layer_list[5][2][4] = (6, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step3 leftHand
-    layer_list[5][3][0] = (3, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step4 rightHand
+    layer_list[5][2][4] = (6, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step3 leftHand
+    layer_list[5][3][0] = (3, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step4 rightHand
     layer_list[5][3][1] = (3, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step4 feet
     layer_list[5][3][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step4 body
     layer_list[5][3][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step4 head
-    layer_list[5][3][4] = (7, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step4 leftHand
-    layer_list[5][4][0] = (4, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step5 rightHand
+    layer_list[5][3][4] = (7, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step4 leftHand
+    layer_list[5][4][0] = (4, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step5 rightHand
     layer_list[5][4][1] = (4, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step5 feet
     layer_list[5][4][2] = (1, 2, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step5 body
     layer_list[5][4][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step5 head
-    layer_list[5][4][4] = (0, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step5 leftHand
-    layer_list[5][5][0] = (5, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step6 rightHand
+    layer_list[5][4][4] = (0, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step5 leftHand
+    layer_list[5][5][0] = (5, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step6 rightHand
     layer_list[5][5][1] = (5, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step6 feet
     layer_list[5][5][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step6 body
     layer_list[5][5][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step6 head
-    layer_list[5][5][4] = (1, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step6 leftHand
-    layer_list[5][6][0] = (6, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step7 rightHand
+    layer_list[5][5][4] = (1, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step6 leftHand
+    layer_list[5][6][0] = (6, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step7 rightHand
     layer_list[5][6][1] = (6, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step7 feet
     layer_list[5][6][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':8}}) #runLeft step7 body
     layer_list[5][6][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':8}}) #runLeft step7 head
-    layer_list[5][6][4] = (2, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step7 leftHand
-    layer_list[5][7][0] = (7, 0, {'orientation':1, 'delta':{'x':2, 'y':7}}) #runLeft step8 rightHand
+    layer_list[5][6][4] = (2, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step7 leftHand
+    layer_list[5][7][0] = (7, 0, {'orientation':1, 'delta':{'x':2, 'y':0}}) #runLeft step8 rightHand
     layer_list[5][7][1] = (7, 1, {'orientation':1, 'delta':{'x':0, 'y':0}}) #runLeft step8 feet
     layer_list[5][7][2] = (1, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step8 body
     layer_list[5][7][3] = (0, 2, {'orientation':1, 'delta':{'x':0, 'y':4}}) #runLeft step8 head
-    layer_list[5][7][4] = (3, 0, {'orientation':1, 'delta':{'x':4, 'y':10}}) #runLeft step8 leftHand
+    layer_list[5][7][4] = (3, 0, {'orientation':1, 'delta':{'x':4, 'y':0}}) #runLeft step8 leftHand
 
     layer_list[6][0][0] = (0, 3, {'orientation':0, 'delta':{'x':0, 'y':0}}) #attackRunRight step1 leftHand
     layer_list[6][0][1] = (0, 1, {'orientation':0, 'delta':{'x':0, 'y':0}}) #attackRunRight step1 feet
