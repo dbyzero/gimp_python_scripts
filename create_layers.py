@@ -110,7 +110,7 @@ def add_a_layer(row_layer, row, step):
 
         #change saturation for behind arm
         if(sprite[0] == 0):
-            pdb.gimp_hue_saturation(layer, ALL_HUES, 0, -100, 0)
+            pdb.gimp_hue_saturation(layer, ALL_HUES, 0, -40, 0)
 
 
         number_sprite = 12 * 8 * 5
